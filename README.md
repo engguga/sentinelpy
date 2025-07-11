@@ -31,24 +31,6 @@ python -m sentinel_forensics.forensics
 python -m sentinel_netmon.netmon
 python -m sentinel_dashboard.dashboard
 
-## Project Structure
-
-sentinelpy/
-├── sentinel_collector/
-├── sentinel_detector/
-├── sentinel_responder/
-├── sentinel_forensics/
-├── sentinel_netmon/
-├── sentinel_dashboard/
-├── data/
-├── tests/
-├── docs/
-├── requirements.txt
-├── requirements-dev.txt
-├── setup.py
-├── README.md
-└── .github/workflows/
-
 ## Contributing
 
 Contributions are welcome. Please adhere to the project's coding standards, run tests before submitting, and follow the established commit message conventions.
