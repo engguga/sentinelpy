@@ -21,8 +21,8 @@ class Responder:
         if not self.should_respond():
             logger.info("Response cooldown active, skipping response.")
             return False
-        # Example response logic, customize as needed
-        if self.detector.is_threat(event):
+        # Usa detect para identificar ameaças
+        if bool(self.detector.detect(event)):
             logger.info(f"Responding to threat: {event}")
             self.execute_response(event)
             self.last_response_time = datetime.datetime.now()
@@ -31,7 +31,6 @@ class Responder:
         return False
 
     def execute_response(self, event):
-        # Implement your actual response actions here (alert, block IP, etc.)
+        # Aqui implemente a resposta real (alerta, bloqueio, etc)
         logger.info(f"Executing response actions for event: {event}")
-        # Placeholder: print or log action
         print(f"Response executed for event: {event}")
