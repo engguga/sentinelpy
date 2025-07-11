@@ -1,0 +1,9 @@
+site_name: SentinelPy Documentation
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Usage: usage.md
+  - API: api.md
+  - Use Cases: use_cases.md

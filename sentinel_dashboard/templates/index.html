@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SentinelPy Dashboard</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 2rem; background-color: #0a3d2e; color: #fff; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.5rem; border: 1px solid #ccc; }
+th { background-color: #07542b; }
+</style>
+</head>
+<body>
+<h1>SentinelPy Logs</h1>
+<table>
+<thead>
+<tr><th>Timestamp</th><th>Source</th><th>Entry</th></tr>
+</thead>
+<tbody>
+{% for log in logs %}
+<tr>
+<td>{{ log.timestamp }}</td>
+<td>{{ log.source }}</td>
+<td>{{ log.entry }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>

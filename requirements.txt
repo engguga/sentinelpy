@@ -1,0 +1,9 @@
+yara-python
+psutil
+scapy
+flask
+reportlab
+pdfkit
+pyinotify
+requests
+schedule
