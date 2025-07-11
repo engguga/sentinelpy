@@ -1,20 +1,38 @@
-name: SentinelPy CI
+name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -r requirements-dev.txt
-      - name: Run tests
-        run: pytest
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.13
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        . venv/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pre-commit pytest
+
+    - name: Run pre-commit hooks
+      run: |
+        . venv/bin/activate
+        pre-commit run --all-files
+
+    - name: Run tests
+      run: |
+        . venv/bin/activate
+        pytest --maxfail=1 --disable-warnings -q
+
