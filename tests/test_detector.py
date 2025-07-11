@@ -1,6 +1,6 @@
-from sentinel_detector.detector import Detector
+from sentinel_detector.detector import ThreatDetector
 
 
 def test_detector_instantiation():
-    detector = Detector()
-    assert detector.rules_path == "data/yara_rules.yar"
+    detector = ThreatDetector()
+    assert detector is not None

@@ -1,6 +1,7 @@
-class NetMon:
-    def __init__(self):
-        pass
+class NetMonitor:
+    def __init__(self, interface="eth0"):
+        self.interface = interface
 
-    def monitor(self):
+    def start_monitoring(self):
+        # Placeholder for starting network monitoring
         pass
